@@ -19,11 +19,19 @@ public class insert {
                 System.out.print(a[i]+" ");
             }
     }
-    public static void main(String args[]){
-        int a[]={12,11,13,5,6};
+     public static void main(String args[]){
+        Random rand = new Random();
+        int a[] = new int[50];
+        for(int i=0; i<a.length; i++){
+            a[i] = rand.nextInt(50);
+        }
         insert is = new insert();
+        long startTime = System.currentTimeMillis();
         is.insert(a);
+        long endTime = System.currentTimeMillis();
         is.printarr(a);
+        System.out.println("\nTime taken: " + (endTime - startTime) + " milliseconds");
+    }
     }
     
 }

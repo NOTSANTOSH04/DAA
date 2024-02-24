@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class bubble {
     void bubble(int a[]){
         int i,j,temp;
@@ -19,9 +21,16 @@ public class bubble {
         }
     }
     public static void main(String args[]){
-        int a[]={12,11,13,5,6};
+        Random rand = new Random();
+        int a[] = new int[50];
+        for(int i=0; i<a.length; i++){
+            a[i] = rand.nextInt(50);
+        }
         bubble bs = new bubble();
-        bs.bubble(a);
+        long startTime = System.currentTimeMillis();
+        bs.insert(a);
+        long endTime = System.currentTimeMillis();
         bs.printarr(a);
+        System.out.println("\nTime taken: " + (endTime - startTime) + " milliseconds");
     }
 }
